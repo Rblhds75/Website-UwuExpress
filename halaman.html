@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expedisi Paket Express</title>
+    <link rel="stylesheet" href="halaman.css">
+    <style>
+        iframe {
+            width: 101%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="brand">
+        <div class="firstname">UwU</div>
+        <div class="lastname">Express</div>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#informasi">Informasi</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#lacak-pengiriman">Lacak Pengiriman</a></li>
+        <li><a href="#cek-ongkir">Cek Ongkir</a></li>
+        <li><a href="#infoProduk">Produk & layanan</a></li>
+        <li><a href="#lokasi-drop-point">Lokasi Drop Point</a></li>
+        <li><a href="#tutorial-packing-paket">Tutorial Packing Paket</a></li>
+    </ul>
+</nav>
+
+<script type="text/javascript">
+const menuItems = document.querySelectorAll('nav a');
+menuItems.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.style.transition = 'all 0.2s'; 
+        item.style.color = 'blue';
+        item.style.fontSize = '1.1em';
+        item.style.opacity = '1';
+    });
+
+    item.addEventListener('mouseout', () => {
+        item.style.transition = 'all 0.1s';
+        item.style.color = 'white';
+        item.style.fontSize = '1em';
+        item.style.opacity = '1';
+    });
+});
+</script>
+
+<div class="content">
+    <div class="section" id="informasi-utama">
+        <h2>Informasi Utama</h2>
+        <p>Selamat datang di UwU Express - Solusi Terbaik untuk Pengiriman Paket Anda! Kami hadir untuk memberikan layanan pengiriman yang cepat, aman, dan terpercaya ke seluruh penjuru Indonesia. Dengan jaringan luas dan teknologi terkini, kami memastikan setiap paket Anda tiba tepat waktu dan dalam kondisi sempurna.
+            Pelanggan adalah prioritas utama kami, oleh karena itu kami selalu siap membantu dengan layanan pelanggan yang responsif dan ramah. Percayakan pengiriman paket Anda kepada kami, karena di UwU Express, kepuasan Anda adalah komitmen kami. Selamat menikmati pengalaman pengiriman terbaik bersama kami!</p>
+        <a href="#">Selengkapnya</a>
+    </div>
+
+    <div class="section" id="pelacakan-paket">
+        <h2>Pelacakan Paket</h2>
+        <input type="text" name="kode" placeholder="Masukkan Kode Paket" required>
+        <a href="#">Lacak</a>
+    </div>
+
+    <iframe src="Folder.html"></iframe>
+</div>
+</body>
+</html>

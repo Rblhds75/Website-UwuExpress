@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UTS Praktikum Program Web</title>
+    <link rel="stylesheet" href="Folder.css">
+    <style>
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const prosesButton = document.querySelector('input[type="button"]');
+            prosesButton.addEventListener("click", function() {
+                const noRegis = document.querySelector('input[name="noregis"]').value;
+                const kodePaket = document.querySelector('input[name="kode"]').value;
+                const namaPengirim = document.querySelector('input[name="namaPengirim"]').value;
+                const namaPenerima = document.querySelector('input[name="namaPenerima"]').value;
+                const nomorPenerima = document.querySelector('input[name="nomorPenerima"]').value;
+                const jenisPembayaran = document.querySelector('select[name="jenis"]').value;
+                const beratPaket = document.querySelector('input[name="berat"]:checked').value;
+                const checkboxes = document.querySelectorAll('input[name="ongkir"]:checked');
+                let ongkosPengiriman = '';
+                checkboxes.forEach(function(checkbox) {
+                    ongkosPengiriman += checkbox.value + ' ';
+                });
+
+                document.querySelector('#infoNoregis').textContent = noRegis;
+                document.querySelector('#infoKode').textContent = kodePaket;
+                document.querySelector('#infoNamaPengirim').textContent = namaPengirim;
+                document.querySelector('#infoNamaPenerima').textContent = namaPenerima;
+                document.querySelector('#infonoPenerima').textContent = nomorPenerima;
+                document.querySelector('#infoPembayaran').textContent = jenisPembayaran;
+                document.querySelector('#infoBerat').textContent = beratPaket;
+                document.querySelector('#infoOngkos').textContent = ongkosPengiriman;
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend><h1>INFORMASI CUSTOMER</h1></legend>
+            <table class="center">
+                <tr>
+                    <td><b>Data Customer</b></td>
+                </tr>
+                <tr>
+                    <td><label>No. Registrasi</label></td>
+                    <td>:</td>
+                    <td><input type="number" name="noregis" placeholder="Masukkan Nomor Registrasi" required></td>
+
+                    <td>Nomor Telp Penerima</td>
+                    <td>:</td>
+                    <td><input type="text" name="nomorPenerima" placeholder="Masukkan Nomor Penerima" required></td>
+                </tr>
+                <tr>
+                    <td><label>Nama Pengirim</label></td>
+                    <td>:</td>
+                    <td><input type="text" name="namaPengirim" placeholder="Masukkan Nama Pengirim" required></td>
+
+                    <td>Nama Penerima</td>
+                    <td>:</td>
+                    <td><input type="text" name="namaPenerima" placeholder="Masukkan Nama Penerima" required></td>
+                </tr>
+                <tr>
+                    <td><label>Jenis Pembayaran</label></td>
+                    <td>:</td>
+                    <td>
+                        <select name="jenis" required>
+                            <option value="Transfer Bank">Transfer Bank</option>
+                            <option value="IndoMei">IndoMei</option>
+                            <option value="AlfaAll">AlfaAll</option>
+                            <option value="COD">COD</option>
+                        </select>
+                    </td>
+
+                    <td>Berat Paket</td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" name="berat" value="< 1Kg" required> &lt; 1Kg
+                        <input type="radio" name="berat" value="> 1Kg" required> &gt; 1Kg
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Ongkos Pengiriman</label></td>
+                    <td>:</td>
+                    <td>
+                        <input type="checkbox" name="ongkir" value="Rp.35.000">Rp.35.000
+                        <input type="checkbox" name="ongkir" value="Rp.50.000">Rp.50.000
+                    </td>
+
+                    <td>Alamat Penerima</td>
+                    <td>:</td>
+                    <td><input type="text" name="Alamat" placeholder="Masukkan Alamat Penerima" required></td>
+                </tr>
+
+                <tr>
+                    <td>Kode Paket</td>
+                    <td>:</td>
+                    <td><input type="text" name="kode" placeholder="Masukkan kode Paket" required></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <input type="button" value="Proses">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+
+    <fieldset>
+        <table>
+            <b>Info Data Customer</b>
+            <tr>
+                <td>No. Registrasi</td>
+                <td>:</td>
+                <td><span id="infoNoregis"></span></td>
+            </tr>
+            <tr>
+                <td>Kode Paket</td>
+                <td>:</td>
+                <td><span id="infoKode"></span></td>
+            </tr>
+            <tr>
+                <td>Nama Pengirim</td>
+                <td>:</td>
+                <td><span id="infoNamaPengirim"></span></td>
+            </tr>
+            <tr>
+                <td>Nama Penerima</td>
+                <td>:</td>
+                <td><span id="infoNamaPenerima"></span></td>
+            </tr>
+            <tr>
+                <td>Nama Telp Penerima</td>
+                <td>:</td>
+                <td><span id="infonoPenerima"></span></td>
+            </tr>
+            <tr>
+                <td>Jenis Pembayaran</td>
+                <td>:</td>
+                <td><span id="infoPembayaran"></span></td>
+            </tr>
+            <tr>
+                <td>Berat Paket</td>
+                <td>:</td>
+                <td><span id="infoBerat"></span></td>
+            </tr>
+            <tr>
+                <td>Ongkos Pengiriman</td>
+                <td>:</td>
+                <td><span id="infoOngkos"></span></td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+</html>
